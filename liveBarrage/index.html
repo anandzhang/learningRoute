@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Live Barrage</title>
+        <style>
+            body {
+                background-color: #1AC8DB;
+                text-align: center;
+            }
+
+            #content * {
+                position: absolute;
+            }
+
+            #send-barrage input {
+                border: 1px solid transparent;
+                border-radius: 4px;
+                padding: 5px 10px;
+                width: 30%;
+            }
+
+            #send-barrage button {
+                padding: 5px 10px;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                background-color: #FFFFFF;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div>你站在桥上看风景</div>
+            <div>看风景的人在楼上看你</div>
+            <div>明月装饰了你的窗子</div>
+            <div>你装饰了别人的梦</div>
+            <div>山有木兮木有枝，心悦君兮君不知。</div>
+            <div>曾经沧海难为水</div>
+            <div>除却巫山不是云</div>
+        </div>
+
+        <div id="send-barrage">
+            <label>
+                <input type="text">
+            </label>
+            <button>发送弹幕</button>
+        </div>
+
+        <script>
+            var barrageList = document.querySelectorAll("#content div"),
+                sendButton = document.querySelector("#send-barrage button"),
+                //  视窗高度、宽度
+                screenHeight = document.documentElement.clientHeight,
+                screenWidth = document.documentElement.clientWidth,
+                // 弹幕发送节点的高度
+                sendNodeHeight = document.querySelector("#send-barrage").clientHeight,
+                // 弹幕内容所在的父节点
+                contentNode = document.querySelector("#content");
+
+            // 发送弹幕按钮点击事件
+            sendButton.onclick = function () {
+                var barrageNode = document.createElement("div"),  // 创建一个新的节点
+                    inputNode = document.querySelector("#send-barrage input");
+                barrageNode.innerHTML = inputNode.value;
+                inputNode.value = null;
+                // 添加到父节点
+                contentNode.appendChild(barrageNode);
+                // 初始化这个新弹幕节点
+                init(barrageNode, screenHeight, sendNodeHeight, screenWidth);
+            };
+
+            for (var index = 0; index < barrageList.length; index++) {
+                init(barrageList[index], screenHeight, sendNodeHeight, screenWidth);
+            }
+
+            /**
+             * 初始化弹幕
+             * @param barrage 弹幕节点
+             * @param screenHeight
+             * @param sendNodeHeight
+             * @param screenWidth
+             */
+            function init(barrage, screenHeight, sendNodeHeight, screenWidth) {
+                var maxLeft = screenWidth - barrage.clientWidth,  // 弹幕存在的最大left值
+                    maxTop = screenHeight - sendNodeHeight - barrage.clientHeight;  // 弹幕存在的最大top值
+                barrage.style.top = getRandomNumber(maxTop, sendNodeHeight) + "px";
+                barrage.style.left = maxLeft + "px";
+                barrage.style.color = getRandomColor();
+                flow(barrage, maxLeft);
+            }
+
+            /**
+             * 让弹幕流动
+             * @param barrage 弹幕节点
+             * @param maxLeft 移动范围的最大left值
+             */
+            function flow(barrage, maxLeft) {
+                if (maxLeft > -barrage.clientWidth) {
+                    maxLeft -= 2;
+                    barrage.style.left = maxLeft + "px";
+                    // H5新增方法
+                    requestAnimationFrame(function () {
+                        flow(barrage, maxLeft);
+                    });
+                } else {
+                    // 删除该弹幕节点
+                    contentNode.removeChild(barrage);
+                }
+            }
+
+            /**
+             * 得到一个两数之间的随机数
+             * Get a random number between two numbers
+             * @param max 范围的最大值
+             * @param min 范围的最小值
+             * @returns {number}
+             */
+            function getRandomNumber(max, min) {
+                return Math.random() * (max - min) + min;
+            }
+
+            /**
+             * 得到一个随机颜色
+             * @returns {string}
+             */
+            function getRandomColor() {
+                return "#" + Math.random().toString(16).slice(-6);
+            }
+        </script>
+    </body>
+</html>
