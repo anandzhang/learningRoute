@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>3D Rotate Album</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background: #000;
+            }
+
+            #content {
+                perspective: 800px; /*透视 对子元素作用透视/景深效果*/
+            }
+
+            #album {
+                position: relative;
+                width: 133px;
+                height: 200px;
+                margin: 200px auto 0;
+                transform: rotateX(-10deg); /*旋转*/
+                transform-style: preserve-3d; /*子元素呈现3d样式*/
+            }
+
+            #album img {
+                position: absolute;
+                transform: rotateY(0deg);
+                transition: 1s; /*过渡*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <div id="album">
+                <img src="img/1.jpg" alt="1.jpg">
+                <img src="img/2.jpg" alt="2.jpg">
+                <img src="img/3.jpg" alt="3.jpg">
+                <img src="img/4.jpg" alt="4.jpg">
+                <img src="img/5.jpg" alt="5.jpg">
+                <img src="img/6.jpg" alt="6.jpg">
+                <img src="img/7.jpg" alt="7.jpg">
+                <img src="img/8.jpg" alt="8.jpg">
+                <img src="img/9.jpg" alt="9.jpg">
+                <img src="img/10.jpg" alt="10.jpg">
+                <img src="img/11.jpg" alt="11.jpg">
+            </div>
+        </div>
+        <script>
+            var album = document.querySelector("#album"),
+                images = album.getElementsByTagName("img"),
+                imgNumber = images.length,  // 相册图片数量
+                angle = 360 / imgNumber,  // 每张图片间的夹角
+                albumRotateX = -10,  // 相册的transform值
+                albumRotateY = 0;
+
+            // 页面加载完成后实现动态效果
+            window.onload = function () {
+                album.style.transform = "rotateX(-10deg) rotateY(0deg)";
+                for (var index = 0; index < imgNumber; index++) {
+                    images[index].style.transform = "rotateY(" + angle * index + "deg) translateZ(350px)";
+                    // 设置过渡效果的延迟 第一张图片最后呈现动画
+                    images[index].style.transitionDelay = (imgNumber - index) * 0.1 + "s";
+                }
+            };
+
+            // 用户鼠标操作相册旋转
+            document.documentElement.onmousedown = function (event) {
+                // 鼠标按下时位置
+                var oldX = event.clientX,
+                    oldY = event.clientY;
+                // 鼠标按下时移动
+                this.onmousemove = function (event) {
+                    // 鼠标当前位置
+                    var newX = event.clientX,
+                        newY = event.clientY;
+
+                    albumRotateX -= (newY - oldY) * 0.1;
+                    albumRotateY += (newX - oldX) * 0.1;
+                    album.style.transform = "rotateX(" + albumRotateX + "deg) rotateY(" + albumRotateY + "deg)";
+
+                    // 使用过的新位置 作为 下一次移动的上一个位置
+                    oldX = newX;
+                    oldY = newY;
+                };
+                // 松开鼠标
+                this.onmouseup = function () {
+                    // 卸载事件监听程序
+                    this.onmousemove = null;
+                    this.onmouseup = null;
+                };
+            };
+            // 阻止用户的拖拽行为
+            document.body.ondragstart = function (event) {
+                event.preventDefault();
+            };
+        </script>
+    </body>
+</html>
