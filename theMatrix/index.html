@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Title</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            var screenWidth = document.documentElement.clientWidth,
+                screenHeight = document.documentElement.clientHeight,
+                canvas = document.getElementById("canvas"),
+                context = canvas.getContext("2d");
+            // canvas画布大小设置为可视区域大小
+            canvas.width = screenWidth;
+            canvas.height = screenHeight;
+
+            var fontSize = 18,
+                // 行能容纳的字母数
+                maxNumber = Math.floor(screenWidth / fontSize),
+                // 每个字母的Y坐标存为数组，便于代码雨 不同字母不同Y值的实现
+                posYArray = Array(maxNumber).fill(0);
+
+            context.font = fontSize + "px";
+            setInterval(fall, 50);  // 每50ms执行一次字母 下落
+
+            /**
+             * 字母下落
+             * 当下落到底后 小概率改变posYArray中的字母Y值 出现代码雨
+             */
+            function fall() {
+                // 画布背景设为黑色
+                context.fillStyle = "rgba(0,0,0,0.1)";  // rgba alpha设置透明度  实现渐变
+                context.fillRect(0, 0, screenWidth, screenHeight);
+                // 填字母时颜色为绿
+                context.fillStyle = "green";
+                // 显示字母
+                for (var index = 0; index < maxNumber; index++) {
+                    var letter = getRandomLetter(),
+                        positionX = fontSize * index,
+                        positionY = fontSize * posYArray[index];
+                    context.fillText(letter, positionX, positionY);
+                    // Math.random() > 0.95 小概论改变字母Y的值 使得出现代码雨效果
+                    if (positionY > screenHeight && Math.random() > 0.95) {
+                        posYArray[index] = 0;
+                    }
+                    posYArray[index]++;
+                }
+            }
+
+            /**
+             * 取得26字母表的随机字母
+             * @returns {string}
+             */
+            function getRandomLetter() {
+                var alphabet = "QWERTYUIOPASDFGHJKLZXCVBNM",
+                    randomIndex = Math.floor(Math.random() * 26);
+                return alphabet[randomIndex];
+            }
+        </script>
+    </body>
+</html>
