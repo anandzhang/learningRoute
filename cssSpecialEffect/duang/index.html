@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Duang</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f5f4f5;
+        }
+        #content {
+            width: 900px;
+            margin: 10% auto;
+        }
+        ul {
+            list-style: none;
+        }
+        #content li {
+            float: left;
+            padding: 5px;
+        }
+        #content li:hover {
+            animation: shake 0.8s;
+        }
+        @keyframes shake {
+            0% {
+                transform: scale(1, 1);
+            }
+            20% {
+                transform: scale(1.25, 0.75);
+            }
+            40% {
+                transform: scale(0.8, 1.2);
+            }
+            60% {
+                transform: scale(1.15, 0.85);
+            }
+            80% {
+                transform: scale(0.9, 1.1);
+            }
+            90% {
+                transform: scale(1.05, 0.95);
+            }
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul>
+            <li><img src="img/1.jpg" alt="avatar"></li>
+            <li><img src="img/2.jpg" alt="avatar"></li>
+            <li><img src="img/3.jpg" alt="avatar"></li>
+            <li><img src="img/4.jpg" alt="avatar"></li>
+            <li><img src="img/5.jpg" alt="avatar"></li>
+            <li><img src="img/6.jpg" alt="avatar"></li>
+            <li><img src="img/7.jpg" alt="avatar"></li>
+            <li><img src="img/8.jpg" alt="avatar"></li>
+        </ul>
+    </div>
+</body>
+</html>
