@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>3D Cube Slideshow</title>
+        <style>
+            body, ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            #content {
+                position: relative;
+                width: 600px;
+                height: 320px;
+                margin: 8% auto;
+            }
+
+            ul {
+                list-style: none;
+                perspective: 800px;
+            }
+
+            .show {
+                width: 600px;
+                height: 320px;
+            }
+
+            .show li {
+                position: relative;
+                float: left;
+                width: 150px;
+                height: 320px;
+                transform: translateZ(-160px);
+                transform-style: preserve-3d;
+            }
+
+            .show span {
+                position: absolute;
+                width: 150px;
+                height: 320px;
+            }
+
+            .show span:nth-child(1) {
+                background-image: url("../slideshow/img/minions1.jpg");
+                transform: translateZ(160px);
+            }
+
+            .show span:nth-child(2) {
+                background-image: url("../slideshow/img/minions2.jpg");
+                transform: translateZ(-160px) rotateX(180deg); /*变换顺序会影响到效果*/
+            }
+
+            .show span:nth-child(3) {
+                background-image: url("../slideshow/img/minions3.jpg");
+                transform: translateZ(-160px) rotateX(90deg); /*fixed bug：rotateX不同导致图片颠倒*/
+                transform-origin: top;
+            }
+
+            .show span:nth-child(4) {
+                background-image: url("../slideshow/img/minions4.jpg");
+                transform: translateZ(-160px) rotateX(-90deg);
+                transform-origin: bottom;
+            }
+
+            .show li:nth-child(2) span {
+                background-position: -150px;
+            }
+
+            .show li:nth-child(3) span {
+                background-position: -300px;
+            }
+
+            .show li:nth-child(4) span {
+                background-position: 150px;
+            }
+
+            .show li:nth-child(1) {
+                transition: 4s;
+            }
+
+            .show li:nth-child(2) {
+                transition: 4s 0.25s;
+            }
+
+            .show li:nth-child(3) {
+                transition: 4s 0.5s;
+            }
+
+            .show li:nth-child(4) {
+                z-index: -1;
+                transition: 4s 0.75s;
+            }
+
+            .button {
+                position: absolute;
+                right: 5px;
+                bottom: 5px;
+            }
+
+            .button li {
+                float: left;
+                margin-left: 3px;
+                width: 20px;
+                height: 20px;
+                color: white;
+                line-height: 20px;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 1px 3px 8px #fff;
+                background-color: black;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <ul class="show">
+                <li>
+                    <span></span><span></span><span></span><span></span>
+                </li>
+                <li>
+                    <span></span><span></span><span></span><span></span>
+                </li>
+                <li>
+                    <span></span><span></span><span></span><span></span>
+                </li>
+                <li>
+                    <span></span><span></span><span></span><span></span>
+                </li>
+            </ul>
+            <ul class="button">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <script>
+            var button = document.querySelector(".button"),
+                list = button.querySelectorAll("li"),
+                show = document.querySelectorAll(".show li");
+            button.addEventListener("click", function (event) {
+                var target = event.target;
+                if (target.tagName.toLowerCase() === "li") {
+                    var index = Array.prototype.indexOf.call(list, target);
+                    show.forEach(function (value) {
+                        value.style.transform = "translateZ(-160px) rotateX(" + 90 * index + "deg)";
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
