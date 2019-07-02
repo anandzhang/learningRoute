@@ -190,3 +190,136 @@ li.fold {
     height: 10px;
     background-image: url("../img/icon_list.png");
 }
+
+.main-item {
+    height: 650px;
+}
+
+.main-item .container {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    color: #595961;
+    text-align: center;
+}
+
+.main-item .content {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+.main-item h2 {
+    font-size: 30px;
+}
+
+.main-item .content p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.content-list {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+}
+
+.content-list img {
+    width: 270px;
+    height: 140px;
+}
+
+.content-list li {
+    display: inline-block;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,.1);
+}
+
+.content-list h3 {
+    font-size: 18px;
+}
+
+.content-list h3::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 6px auto;
+    background-color: #2d5be5;
+}
+
+.content-list p {
+    font-size: 14px;
+}
+
+.centent-input {
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+}
+
+.centent-input .input {
+    width: 440px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+::-moz-placeholder { color: #c4c0cc; }
+::-webkit-input-placeholder { color:#c4c0cc; }
+:-ms-input-placeholder { color:#c4c0cc; }
+
+.input input {
+    box-sizing: border-box;
+    width: 280px;
+    height: 50px;
+    padding: 12px 20px;
+    border: 1px solid #7cb8ff;
+    font-size: 18px;
+    color: #1b1c26;
+    outline: none;
+}
+
+ .input input:focus {
+     border-color: #2589ff;
+ }
+
+.input input:focus+a {
+    background-color: #2589ff;
+}
+
+.input a {
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background: #7cb8ff;
+}
+
+.main-item:nth-of-type(2) {
+    background: url("../img/bg_ds.jpg") no-repeat center/cover;
+}
+
+.main-item:nth-of-type(4) {
+    height: 930px;
+}
+
+.main-item:nth-of-type(4) {
+    background: #f1f1f5 url("../img/f5_bg.png") no-repeat center;
+}
+
+.main-item:nth-of-type(2) h2,
+.main-item:nth-of-type(2) p {
+    color: #fff;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
