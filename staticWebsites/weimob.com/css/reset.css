@@ -1,0 +1,24 @@
+/* 清除浏览器默认样式
+---------------------------------------- */
+body, p, ul, h1, h2 {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+h1, h2 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

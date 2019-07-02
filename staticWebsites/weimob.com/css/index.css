@@ -1,0 +1,192 @@
+header {
+    background-color: #1746d2;
+    color: #fff;
+}
+
+header .container {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url("../img/ban_buss.png") no-repeat bottom right;
+}
+
+h1 {
+    float: left;
+    position: relative;
+    width: 200px;
+    line-height: 60px;
+    font-size: 0;
+}
+
+h1::before {
+    content: "股票代码";
+    position: absolute;
+    top: -6px;
+    right: 14px;
+    font-size: 12px;
+}
+
+h1::after {
+    content: "2013.HK";
+    position: absolute;
+    top: 7px;
+    right: 14px;
+    font-size: 12px;
+}
+
+h1 img {
+    vertical-align: -10px;
+}
+
+.nav-list {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.nav-list li {
+    display: inline-block;
+    width: 80px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+li.fold {
+    width: 140px;
+    font-size: 12px;
+    line-height: normal;
+}
+
+.fold span::after {
+    content: "";
+    display: block;
+}
+
+.sidebar {
+    float: right;
+    text-align: center;
+}
+
+.sidebar li {
+    display: inline-block;
+    line-height: 60px;
+    font-size: 14px;
+}
+
+.sidebar li:nth-child(1) {
+    width: 52px;
+}
+
+.sidebar li:nth-child(2),
+.sidebar li:nth-child(3) {
+    width: 94px;
+}
+
+.sidebar li:nth-child(2) a {
+    padding: 3px 5px;
+    background: #fff;
+    color: #2589ff;
+    border-radius: 2px;
+}
+
+.sidebar li:nth-child(3) a {
+    padding: 3px 5px;
+    border: 1px solid #fff;
+    border-radius: 2px;
+}
+
+.content .item {
+    display: none;
+    position: absolute;
+    top: 112px;
+    left: 40px;
+}
+
+.content .item.active {
+    display: block;
+}
+
+.content .item h2 {
+    font-size: 58px;
+}
+
+.content .item p {
+    margin-top: 14px;
+    font-size: 24px;
+    letter-spacing: 6px;
+}
+
+.content .btn {
+    position: absolute;
+    bottom: 100px;
+    left: 40px;
+    padding: 8px 45px 10px;
+    font-size: 22px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.pagination-list {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.pagination-list li {
+    display: inline-block;
+    width: 16px;
+    height: 6px;
+    margin-right: 5px;
+    background-color: #fff;
+    opacity: .3;
+}
+
+.pagination-list li.active {
+    opacity: 1;
+}
+
+.news {
+    font-size: 12px;
+    color: #595961;
+    background-color: #f7f8fb;
+}
+
+.news .container {
+    width: 1200px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.news h2 {
+    float: left;
+    line-height: 50px;
+}
+
+.news ul {
+    left: 0;
+    right: 0;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.news li {
+    display: inline-block;
+    position: relative;
+    margin-left: 100px;
+    line-height: 50px;
+}
+
+.news li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 10px;
+    height: 10px;
+    background-image: url("../img/icon_list.png");
+}
