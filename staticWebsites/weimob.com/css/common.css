@@ -1,0 +1,46 @@
+/* float
+---------------------------------------- */
+.is-left {
+    float: left;
+}
+
+.is-right {
+    float: right;
+}
+
+/* block center
+---------------------------------------- */
+.container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+/* font-size
+---------------------------------------- */
+.is-tiny {
+    font-size: 12px;
+}
+
+.is-small {
+    font-size: 14px;
+}
+
+.is-medium {
+    font-size: 18px;
+}
+
+.is-large {
+    font-size: 30px;
+}
+
+.is-huge {
+    font-size: 58px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
