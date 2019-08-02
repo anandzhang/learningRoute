@@ -1,0 +1,44 @@
+#content .content-list li {
+  display: block;
+  position: relative;
+  width: 500px;
+  height: 80px;
+  margin: 16px 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+#content li .message {
+  font-size: 20px;
+}
+
+#content li .more {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#content li .date {
+  font-size: 14px;
+}
+
+#content li .from {
+  font-size: 14px;
+}
+
+#add {
+  display: block;
+  width: 250px;
+  margin-left: 100px;
+  border-radius: 23px;
+  line-height: 46px;
+  text-align: center;
+  color: #fff;
+  background-color: #7b4f4f;
+}
+
+#add:hover {
+  color: #1AC8DB;
+}

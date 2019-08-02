@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>发表留言</title>
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/post.css">
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <h1 class="title">发表留言</h1>
+        <span class="uppercase">post message</span>
+      </div>
+    </div>
+    <div id="form">
+      <form action="/submit" method="get" class="container">
+        <div class="form-item">
+          <label for="name">发表人</label>
+          <input id="name" name="name" minlength="2" maxlength="5" autocomplete="off" required>
+        </div>
+        <div class="form-item">
+          <label for="content">内容</label>
+          <textarea id="content" name="content" minlength="5" required></textarea>
+        </div>
+        <button class="btn-submit" type="submit">确认发表</button>
+      </form>
+    </div>
+  </body>
+</html>

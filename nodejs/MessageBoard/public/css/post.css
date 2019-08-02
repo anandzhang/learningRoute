@@ -1,0 +1,36 @@
+#form .form-item {
+  margin: 50px 0;
+}
+
+#form .form-item label{
+  display: inline-block;
+  width: 80px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 18px;
+  color: #a389ff;
+}
+
+#name {
+  width: 200px;
+  height: 30px;
+  outline: none;
+}
+
+#content {
+  width: 400px;
+  height: 300px;
+  outline: none;
+}
+
+.btn-submit {
+  width: 80px;
+  height: 35px;
+  border-radius: 18px;
+  color: #fff;
+  background-color: #7b4f4f;
+}
+
+.btn-submit:focus {
+  outline: none;
+}
