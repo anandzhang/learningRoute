@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>增加学生信息</title>
+    <link rel="stylesheet" href="/css/base.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>修改学生信息</h1>
+      <form action="/data/modify" method="get">
+        <input type="hidden" name="id" value="$id">
+        <div>
+          <label for="name">姓名</label>
+          <input id="name" name="name" type="text" value="$name" required>
+        </div>
+        <div>
+          <span>性别</span>
+          <input id="gender1" name="gender" type="radio" value="男" checked>
+          <label for="gender1">男</label>
+          <input id="gender2" name="gender" type="radio" value="女">
+          <label for="gender2">女</label>
+        </div>
+        <div>
+          <label for="age">年龄</label>
+          <input id="age" name="age" type="number" value="$age" min="1" max="120" required>
+        </div>
+        <div>
+          <label for="phone">电话</label>
+          <input id="phone" name="phone" type="text" value="$phone" maxlength="11" required>
+        </div>
+        <div>
+          <label for="address">地址</label>
+          <input id="address" name="address" type="text" value="$address" required>
+        </div>
+        <div>
+          <label for="hobby">爱好</label>
+          <input id="hobby" name="hobby" type="text" value="$hobby" required>
+        </div>
+        <button class="btn-submit" type="submit">提交</button>
+      </form>
+    </div>
+  </body>
+</html>
