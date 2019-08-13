@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>社区首页</title>
+    <link rel="stylesheet" href="/css/base.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <h1><a class="logo" href="/">社区</a></h1>
+        <ul class="nav-list">
+          <li><a href="">首页</a></li>
+          <li><a href="">新手入门</a></li>
+          <li><a href="">API</a></li>
+        </ul>
+        <input class="search" type="text">
+        <div class="user is-right">
+          {{ if user }}
+          <span>您好，{{ user.username }} </span>
+          <a class="button" href="/logout">退出</a>
+          {{ else }}
+          <a class="button" href="/user">登录</a>
+          <a class="button" href="/user">注册</a>
+          {{ /if }}
+        </div>
+      </div>
+    </div>
+    <div class="content container">
+      <div class="main">
+        <div class="main-navbar">
+          <ul>
+            <li><a href="">全部</a></li>
+            <li><a href="">精华</a></li>
+            <li><a href="">分享</a></li>
+            <li><a href="">问答</a></li>
+            <li><a href="">招聘</a></li>
+            <li><a href="">客户端测试</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <ul>
+            <li>
+              <img class="avatar" src="/img/avatar.jpg" alt="">
+              <span>55/111067</span>
+              <span></span>
+              <span>Node 12 值得关注的新特性</span>
+              <span>4天前</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar">
+
+      </div>
+    </div>
+  </body>
+</html>

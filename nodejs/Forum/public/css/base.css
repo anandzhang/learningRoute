@@ -1,0 +1,146 @@
+/* reset css */
+body, ul, p, h1 {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* common css */
+body {
+  background-color: #f6f6f6;
+}
+
+.button {
+  padding: 3px 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+
+/* common content */
+.navbar {
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+.navbar .container h1 {
+  float: left;
+  width: 100px;
+  height: 50px;
+}
+
+.logo {
+  display: block;
+  width: inherit;
+  height: inherit;
+  font-size: 0;
+  background: url(/img/logo.png) center/cover;
+}
+
+.nav-list {
+  display: flex;
+  float: left;
+  width: 200px;
+  margin-left: 20px;
+  justify-content: space-around;
+}
+
+.nav-list li {
+  line-height: 50px;
+}
+
+.is-right {
+  float: right;
+}
+
+.user .button {
+  border-color: transparent;
+  line-height: 50px;
+  color: #fff;
+  background-color: #00d1b2;
+}
+
+.navbar .search {
+  width: 200px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 1px solid rgb(236, 236, 236);
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  background-color: #eee;
+}
+
+.content {
+  display: flex;
+  height: 200px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.content .main {
+  width: 750px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
+}
+
+.content .sidebar {
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+}
+
+.main-navbar {
+  color: green;
+  border-bottom: 1px solid #eee;
+}
+
+.main-navbar > ul {
+  padding: 8px 0;
+  margin-left: 10px;
+}
+
+.main-navbar li {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 5px;
+  font-size: 14px;
+}
+
+.topic li {
+  padding: 10px;
+  line-height: 30px;
+}
+
+.topic img {
+  vertical-align: -8px;
+}
+
+.topic span {
+  line-height: 30px;
+}
+
+.topic .avatar {
+  width: 30px;
+  height: 30px;
+}

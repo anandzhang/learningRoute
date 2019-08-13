@@ -1,0 +1,111 @@
+body {
+  background: #91c83e url(/img/bg_user.png) no-repeat center/contain;
+}
+
+.wrap {
+  display: flex;
+  position: relative;
+  margin: 150px auto;
+  width: 1000px;
+  height: 400px;
+  justify-content: space-between;
+  background-color: rgba(10, 10, 10, .7);
+}
+
+.sign-up-info {
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.btn-switch {
+  width: 100px;
+  height: 38px;
+  color: #fff;
+  background-color: transparent;
+}
+
+.sign-in-info {
+  color: #fff;
+}
+
+.wrap .sign-up-info,
+.wrap .sign-in-info {
+  width: 320px;
+  padding: 80px 40px 0 60px;
+}
+
+.more {
+  position: absolute;
+  top: -30px;
+  left: 50px;
+  width: 400px;
+  height: 460px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  transition: 1s;
+}
+
+.more > div {
+  display: none;
+}
+
+.more > div.active {
+  display: block;
+}
+
+.more .sign {
+  padding: 50px 50px 0;
+}
+
+.sign .title {
+  padding-bottom: 20px;
+  color: #1dd1a1;
+}
+
+.sign input {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px 10px;
+  border-width: 0 0 1px 0;
+  font-size: 16px;
+}
+
+.btn-submit {
+  position: relative;
+  top: 20px;
+  left: 200px;
+  width: 100px;
+  height: 38px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1dd1a1;
+}
+
+@keyframes toLeft {
+  0% {
+    left: 450px;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 50px;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    left: 50px;
+  }
+  50% {
+    left: 500px;
+  }
+  100% {
+    left: 450px;
+  }
+}

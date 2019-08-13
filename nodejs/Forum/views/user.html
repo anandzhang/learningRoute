@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nodejs论坛</title>
+    <link rel="stylesheet" href="/css/user.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="sign-up-info">
+        <p class="title">Dont't hava an account?</p>
+        <p>Sign up for Node.js Everywhere, the official Node.js Monthly Newsletter.</p>
+        <button class="btn-switch text-uppercase">sign up</button>
+      </div>
+      <div class="sign-in-info">
+        <p class="title">Have an account?</p>
+        <p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.</p>
+        <button class="btn-switch text-uppercase">sign in</button>
+      </div>
+      <div class="more">
+        <div class="sign active">
+          <p class="title text-uppercase">sign up</p>
+          <form name="sign-up">
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button class="btn-submit text-uppercase" type="submit">sign up</button>
+          </form>
+        </div>
+        <div class="sign">
+          <p class="title text-uppercase">sign in</p>
+          <form name="sign-in">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button class="btn-submit text-uppercase" type="submit">sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/ajax.js"></script>
+    <script src="/js/user.js"></script>
+  </body>
+</html>
