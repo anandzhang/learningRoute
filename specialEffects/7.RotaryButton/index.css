@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background-color: #eee;
+}
+
+.cicle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.cicle .share {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #607d8b;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 2px #000;
+}
+
+.cicle ul {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 1s;
+  transform: scale(.3) rotate(-180deg);
+  box-shadow: 0 0 0 2px #3f3f3f, 0 0 0 4px #fff;
+  z-index: -1;
+  opacity: 0;
+}
+
+.cicle:hover ul {
+  transform: scale(1) rotate(0deg);
+  box-shadow: 0 0 0 2px #3f3f3f, 0 0 0 4px #fff, 0 5px 30px #000;
+  opacity: 1;
+}
+
+.cicle ul li {
+  position: absolute;
+  list-style: none;
+}
+
+.cicle ul li:nth-child(1) {
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cicle ul li:nth-child(2) {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cicle ul li:nth-child(3) {
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.cicle ul li:nth-child(4) {
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.cicle ul li a .fa {
+  color: #112833;
+  transition: .5s;
+}
+
+.cicle ul li:hover a .fa {
+  color: #f44336;
+  transform: scale(1.5);
+}
+
+.cicle ul::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #112833;
+  transform: rotate(45deg);
+}
+
+.cicle ul::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #112833;
+  transform: rotate(-45deg);
+}
